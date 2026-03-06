@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 
 export function Navbar() {
     return (
@@ -22,15 +21,8 @@ export function Navbar() {
                 borderBottom: '1px solid rgba(255,255,255,0.07)',
             }}
         >
-            {/* Left — Logo + Name */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                <Image
-                    src="/nailart.png"
-                    alt="Nailart AI"
-                    width={30}
-                    height={30}
-                    style={{ objectFit: 'contain' }}
-                />
+            {/* Left — Logo */}
+            <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span
                     style={{
                         fontSize: '16px',
@@ -65,7 +57,8 @@ export function Navbar() {
             </div>
 
             {/* Right — Get Started */}
-            <button
+            <a
+                href="/auth"
                 style={{
                     background: 'rgba(255,255,255,0.08)',
                     color: 'white',
@@ -76,10 +69,13 @@ export function Navbar() {
                     cursor: 'pointer',
                     fontFamily: 'inherit',
                     backdropFilter: 'blur(8px)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
                 }}
             >
                 Get Started
-            </button>
+            </a>
         </nav>
     );
 }
